@@ -48,9 +48,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
-	"github.com/gophercises/urlshort"
+	"github.com/ward-r/url-shortener/urlshort"
 )
 
 func main() {
@@ -80,7 +81,8 @@ func main() {
 
 	fmt.Println("Starting the server on :8080")
 	// Change this line to use mapHandler instead of yamlHandler
-	http.ListenAndServe(":8080", mapHandler)
+	err := http.ListenAndServe(":8080", mapHandler)
+	log.Fatal(err)
 }
 
 func defaultMux() *http.ServeMux {

@@ -1,4 +1,4 @@
-module url-shortener
+module github.com/ward-r/url-shortener
 
 go 1.24.5
 
